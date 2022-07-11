@@ -1,0 +1,281 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(255, 211, 129);
+}
+
+.header-info{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 30px 0;
+}
+
+.header-info .title{
+    display: flex;
+    align-items: center;
+    color: rgb(28, 28, 137);
+    font-family: 'Oswald', sans-serif;
+    font-size: 25px;
+}
+
+.header-info .timer{
+    font-family: 'Oswald', sans-serif;
+    background-color: white;
+    color: rgb(222, 183, 111);
+    font-weight: 600;
+    padding: 10px 20px;
+    box-shadow: 7px 5px 5px rgb(222, 183, 111);
+}
+
+/* Root for Rules Box, Start Button, & Quiz Questions */
+.start_btn,
+.rules_box,
+.quiz_question_box ,
+.result-box
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    cursor: pointer;
+    transform: translate(-50%, -50%) scale(.9);
+    font-family: 'Oswald', sans-serif;
+}
+
+.rules_box.activeInfo{
+    z-index: 5;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Start Button Style */
+.start_btn button {
+    font-size: 20px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    padding:  10px 15px;
+    color:rgb(255, 211, 129);
+    border: none;
+    background-color: white;
+    border-radius: 2px;
+    box-shadow: 7px 5px 5px rgb(222, 183, 111);
+    cursor: pointer;
+}
+
+/* Start of Rules Box */
+.rules_box{
+    opacity: 0;
+    background-color: white;
+    width: 350px;
+    border-radius: 2px;
+    padding: 15px 35px;
+    box-shadow: 7px 5px 5px rgb(222, 183, 111);
+}
+
+.rules_box h1{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    padding-bottom: 15px;
+    padding-top: 20px;
+}
+
+.rules_box li{
+    list-style: none;
+    line-height: 175%;
+}
+
+.rules_box span{
+    font-weight: 600;
+    color: rgb(222, 183, 111);
+}
+
+.rules_box .buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 35px;
+
+}
+
+.rules_box .buttons button{
+    margin: 0 5px;
+    height: 40px;
+    width: 200px;
+}
+
+.rules_box .buttons .stop{
+    color: rgb(255, 211, 129);
+    background-color: white;
+    border-color: rgb(255, 211, 129);
+    border-width: .1em;
+    border-radius: 2px;
+    cursor: pointer;
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px;
+}
+
+.rules_box .buttons .begin{
+    color: white;
+    background-color: rgb(255, 211, 129);
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px;
+}
+
+.rules_box .buttons .stop:hover{
+    transition: .5s;
+    background-color: rgb(255, 211, 129);
+    color: white;
+}
+
+.rules_box .buttons .begin:hover{
+    transition: .5s;
+    background-color: rgb(255, 222, 161);
+}
+
+/* Start of Questions Box */
+.quiz_question_box {
+    display: none;
+    width: 450px;
+    background-color: white;
+    border-radius: 2px;
+    box-shadow: 7px 5px 5px rgb(222, 183, 111);
+    padding: 20px 30px;
+}
+
+.quiz_question_box .que-header {
+    font-size: 25px;
+    font-weight: 600;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    color: rgb(28, 28, 137);
+}
+
+.quiz_question_box .option-list .option{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.quiz_question_box .option-list .option button{
+    text-align: center;
+    padding: 15px 0;
+    color: white;
+    background-color: rgb(222, 183, 111);
+    border: none;
+    cursor: pointer;
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px;
+}
+
+.quiz_question_box .option-list .option:hover{
+    background-color: rgb(222, 183, 111);
+    transition: .4s;
+}
+
+/* Start of Question Box Footer */
+.quiz-question-stats{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.quiz-question-stats span{
+    display: flex;
+    align-items: center;
+    color: rgb(255, 222, 161)
+
+}
+
+.quiz-question-stats span p{
+    padding: 0 5px;
+}
+
+.quiz-question-stats .nxt-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 80px;
+    border-color: rgb(255, 222, 161);
+    background-color: white;
+    color: rgb(255, 222, 161);
+    cursor: pointer;
+}
+
+/* Start of Result Box */
+.result-box{
+    display: none;
+    width: 400px;
+    height: 200px;
+    border-radius: 2px;
+    background-color: white;
+    box-shadow: 7px 5px 5px rgb(222, 183, 111);
+}
+
+.result-box .result-header{
+    width: 100%;
+    height: 50px;
+    font-family: 'Oswald', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 30px;
+    color: rgb(28, 28, 137);
+}
+
+.result-box .result-num span{
+    width: 100%;
+    height: 20px;
+    display: flex;
+    align-items: space-evenly;
+    justify-content: center;
+    color: rgb(28, 28, 137);
+}
+
+.result-box .result-num span p{
+    padding: 0 5px;
+}
+
+.result-box .buttons{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 50px;
+    margin-top: 20px;
+}
+
+.result-box .buttons button{
+    width: 90px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: rgb(255, 222, 161);
+    border: none;
+    font-family: 'Oswald', sans-serif;
+    color: rgb(28, 28, 137);
+    border-radius: 2px;
+}
+
+.result-box .buttons button:hover{
+    background-color: rgb(222, 183, 111);
+    color: white;
+    transition: .5s;
+}
+
+
+
