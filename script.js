@@ -26,10 +26,12 @@ begin_btn.onclick = () => {
 let question_count = 0;
 
 //**FUNCTION SHOW QUESTIONS**
-function showQuestions() {
-  const que_text = document.querySelector(".quiz_question_box .options");
-  let que_tag = "<span>" + questions[0].question + "</span>";
-  que_text.innerHTML = que_tag;
+function showQuestions(index) {
+  const quiz_question_box = document.querySelector(
+    ".quiz_question_box .options"
+  );
+  let que_tag = "<span>" + questions[2].question + "</span>";
+  quiz_question_box.innerHTML = que_tag;
 }
 
 //QUESTIONS
