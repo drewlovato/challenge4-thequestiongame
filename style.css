@@ -34,7 +34,7 @@ body {
 /* Root for Rules Box, Start Button, & Quiz Questions */
 .start_btn,
 .rules_box,
-.quiz_question_box ,
+.quiz_question_box,
 .result-box
 {
     position: absolute;
@@ -45,15 +45,16 @@ body {
     font-family: 'Oswald', sans-serif;
 }
 
-.rules_box.activeInfo{
+/* Links for Javascript - Shown State*/
+.activeInfo{
     z-index: 5;
-    opacity: 1;
+    display: block !important;
     pointer-events: auto;
     transform: translate(-50%, -50%) scale(1);
 }
 
 /* Start Button Style */
-.start_btn button {
+.start_btn button{
     font-size: 20px;
     font-family: 'Oswald', sans-serif;
     font-weight: 600;
@@ -66,9 +67,15 @@ body {
     cursor: pointer;
 }
 
+.start_btn button:hover{
+    color: rgb(28, 28, 137);
+    background-color: rgb(255, 211, 129);
+    transition: .5s;
+}
+
 /* Start of Rules Box */
 .rules_box{
-    opacity: 0;
+    display: none;
     background-color: white;
     width: 350px;
     border-radius: 2px;
@@ -276,6 +283,7 @@ body {
     color: white;
     transition: .5s;
 }
+
 
 
 
