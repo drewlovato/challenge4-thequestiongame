@@ -2,8 +2,34 @@
 const start_btn = document.querySelector(".start_btn button");
 const rules_box = document.querySelector(".rules_box");
 const exit_btn = document.querySelector(".buttons .stop");
-const begin_btn = document.querySelector(".buttons .begin");
-const quiz_question_box = document.querySelector(".quiz_question_box");
+const begin_btn = rules_box.querySelector(".buttons .begin");
+const question_box = document.querySelector(".question_box");
+
+//**TIMER FUNCTIONS**
+// selects element by class
+var timeEl = document.querySelector(".time");
+
+// selects element by id
+var mainEl = document.getElementById("main");
+
+var secondsLeft = 10;
+
+function setTime() {
+  // Sets interval in variable
+  var timerInterval = setInterval(function () {
+    secondsLeft--;
+    timeEl.textContent = "Time Remaining: " + secondsLeft;
+
+    if (secondsLeft === 0) {
+      // Stops execution of action at set interval
+      clearInterval(timerInterval);
+      // Calls function to create and append image
+      sendMessage();
+    }
+  }, 1000);
+}
+
+setTime();
 
 //**FUNCTIONS SHOW BOXES**
 //if start button clicked (visible state)=>
@@ -19,19 +45,17 @@ exit_btn.onclick = () => {
 //if begin button clicked (hidden & then visible state)
 begin_btn.onclick = () => {
   rules_box.classList.remove("activeInfo"); //HIDES RULES BOX
-  quiz_question_box.classList.add("activeInfo"); //REVEALS QUESTION BOX
-  showQuestions();
+  question_box.classList.remove("activeQuiz"); //REVEALS QUESTION BOX
+  showQuestions(0);
 };
 
 let question_count = 0;
 
 //**FUNCTION SHOW QUESTIONS**
-function showQuestions(index) {
-  const quiz_question_box = document.querySelector(
-    ".quiz_question_box .options"
-  );
-  let que_tag = "<span>" + questions[2].question + "</span>";
-  quiz_question_box.innerHTML = que_tag;
+function showQuestions() {
+  const question_box = document.querySelector(".question_box");
+  let que_tag = "<span>" + questions[0].question + "<span>";
+  question_box.innerHTML = que_tag;
 }
 
 //QUESTIONS

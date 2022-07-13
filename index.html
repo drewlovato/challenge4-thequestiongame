@@ -16,9 +16,9 @@
 
   <body>
     <!-- START OF HEADER -->
-    <header class="header-info">
+    <header class="header_info">
       <div class="title"><em>the</em> Question Game</div>
-      <div class="timer">Time Remaining: <span>15:00</span></div>
+      <span><h1 class="time"></h1></span>
     </header>
 
     <!-- START BUTTON -->
@@ -38,35 +38,33 @@
       </ul>
 
       <div class="buttons">
-        <button class="stop">EXIT</button>
+        <button class="exit_btn">EXIT</button>
         <button class="begin">BEGIN</button>
       </div>
     </section>
 
     <!-- QUIZ BOX MAIN -->
-    <section class="quiz_question_box">
-      <div class="question-1">
-        <header class="que-header">
-          <span>What does URL stand for?</span>
-        </header>
-        <div class="option-list">
-          <div class="option">
-            <button>Underate Relative Language</button>
-          </div>
-          <div class="option">
-            <button>Uniform Resource Locator</button>
-          </div>
-          <div class="option">
-            <button>Underwater Relocation Landing</button>
-          </div>
-          <div class="option">
-            <button>Universal Raptor Launcher 🦖</button>
-          </div>
+    <section class="question_box">
+      <div class="question_box_header">
+        <span>What does URL stand for?</span>
+      </div>
+      <div class="option-list">
+        <!-- <div class="option">
+          <span>Underate Relative Language</span>
         </div>
+        <div class="option">
+          <button>Uniform Resource Locator</button>
+        </div>
+        <div class="option">
+          <button>Underwater Relocation Landing</button>
+        </div>
+        <div class="option">
+          <button>Universal Raptor Launcher 🦖</button>
+        </div> -->
       </div>
 
       <!-- QUESTION BOX FOOTER -->
-      <footer class="quiz-question-stats">
+      <footer class="question_box_footer">
         <div>
           <span
             ><p>3</p>
@@ -80,11 +78,11 @@
     </section>
 
     <!-- RESULT BOX -->
-    <section class="result-box">
-      <header class="result-header">
+    <section class="result_box">
+      <header class="result_header">
         Congrats! You have completed the game.
       </header>
-      <div class="result-num">
+      <div class="result_num">
         <span
           ><p>1</p>
           of

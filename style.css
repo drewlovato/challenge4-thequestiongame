@@ -7,14 +7,14 @@ body {
     background-color: rgb(255, 211, 129);
 }
 
-.header-info{
+.header_info{
     width: 100%;
     display: flex;
     justify-content: space-evenly;
     padding: 30px 0;
 }
 
-.header-info .title{
+.header_info .title{
     display: flex;
     align-items: center;
     color: rgb(28, 28, 137);
@@ -22,20 +22,27 @@ body {
     font-size: 25px;
 }
 
-.header-info .timer{
-    font-family: 'Oswald', sans-serif;
+.header_info span{
     background-color: white;
-    color: rgb(222, 183, 111);
+    background-size: 20px 45px;
+    box-shadow: 7px 5px 5px rgb(222, 183, 111);
+}
+
+.time{
+    font-family: 'Oswald', sans-serif;
+    /* background-size: 20px 45px; */
+    /* background-color: white; */
+    color: rgb(28, 28, 137);
+    font-size: 20px;
     font-weight: 600;
     padding: 10px 20px;
-    box-shadow: 7px 5px 5px rgb(222, 183, 111);
 }
 
 /* Root for Rules Box, Start Button, & Quiz Questions */
 .start_btn,
 .rules_box,
-.quiz_question_box,
-.result-box
+.question_box,
+.result_box
 {
     position: absolute;
     top: 50%;
@@ -46,7 +53,9 @@ body {
 }
 
 /* Links for Javascript - Shown State*/
-.activeInfo{
+.rules_box.activeInfo,
+.question_box.activeQuiz
+{
     z-index: 5;
     display: block !important;
     pointer-events: auto;
@@ -116,7 +125,7 @@ body {
     width: 200px;
 }
 
-.rules_box .buttons .stop{
+.rules_box .buttons .exit_btn{
     color: rgb(255, 211, 129);
     background-color: white;
     border-color: rgb(255, 211, 129);
@@ -137,7 +146,7 @@ body {
     font-size: 15px;
 }
 
-.rules_box .buttons .stop:hover{
+.rules_box .buttons .exit_btn:hover{
     transition: .5s;
     background-color: rgb(255, 211, 129);
     color: white;
@@ -149,7 +158,7 @@ body {
 }
 
 /* Start of Questions Box */
-.quiz_question_box {
+.question_box {
     display: none;
     width: 450px;
     background-color: white;
@@ -158,7 +167,7 @@ body {
     padding: 20px 30px;
 }
 
-.quiz_question_box .que-header {
+.question_box .question_box_header {
     font-size: 25px;
     font-weight: 600;
     height: 70px;
@@ -167,7 +176,7 @@ body {
     color: rgb(28, 28, 137);
 }
 
-.quiz_question_box .option-list .option{
+.question_box .option-list .option{
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -175,7 +184,7 @@ body {
     margin-bottom: 10px;
 }
 
-.quiz_question_box .option-list .option button{
+.question_box .option-list .option button{
     text-align: center;
     padding: 15px 0;
     color: white;
@@ -186,13 +195,13 @@ body {
     font-size: 15px;
 }
 
-.quiz_question_box .option-list .option:hover{
+.question_box .option-list .option:hover{
     background-color: rgb(222, 183, 111);
     transition: .4s;
 }
 
 /* Start of Question Box Footer */
-.quiz-question-stats{
+.question_box_footer{
     width: 100%;
     height: 70px;
     display: flex;
@@ -200,18 +209,18 @@ body {
     align-items: center;
 }
 
-.quiz-question-stats span{
+.question_box_footer span{
     display: flex;
     align-items: center;
     color: rgb(255, 222, 161)
 
 }
 
-.quiz-question-stats span p{
+.question_box_footer span p{
     padding: 0 5px;
 }
 
-.quiz-question-stats .nxt-btn{
+.question_box_footer .nxt-btn{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -224,7 +233,7 @@ body {
 }
 
 /* Start of Result Box */
-.result-box{
+.result_box{
     display: none;
     width: 400px;
     height: 200px;
@@ -233,7 +242,7 @@ body {
     box-shadow: 7px 5px 5px rgb(222, 183, 111);
 }
 
-.result-box .result-header{
+.result_box .result_header{
     width: 100%;
     height: 50px;
     font-family: 'Oswald', sans-serif;
@@ -244,7 +253,7 @@ body {
     color: rgb(28, 28, 137);
 }
 
-.result-box .result-num span{
+.result_box .result_num span{
     width: 100%;
     height: 20px;
     display: flex;
@@ -253,11 +262,11 @@ body {
     color: rgb(28, 28, 137);
 }
 
-.result-box .result-num span p{
+.result_box .result_num span p{
     padding: 0 5px;
 }
 
-.result-box .buttons{
+.result_box .buttons{
     display: flex;
     justify-content: space-evenly;
     width: 100%;
@@ -265,7 +274,7 @@ body {
     margin-top: 20px;
 }
 
-.result-box .buttons button{
+.result_box .buttons button{
     width: 90px;
     height: 40px;
     display: flex;
@@ -278,7 +287,7 @@ body {
     border-radius: 2px;
 }
 
-.result-box .buttons button:hover{
+.result_box .buttons button:hover{
     background-color: rgb(222, 183, 111);
     color: white;
     transition: .5s;
