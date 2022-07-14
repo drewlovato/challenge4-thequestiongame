@@ -54,7 +54,8 @@ body {
 
 /* Links for Javascript - Shown State*/
 .rules_box.activeInfo,
-.question_box.activeQuiz
+.question_box.activeInfo,
+.result_box.activeResult
 {
     z-index: 5;
     display: block !important;
@@ -195,7 +196,7 @@ body {
     font-size: 15px;
 }
 
-.question_box .option-list .option:hover{
+.question_box button:hover{
     background-color: rgb(222, 183, 111);
     transition: .4s;
 }
@@ -220,7 +221,7 @@ body {
     padding: 0 5px;
 }
 
-.question_box_footer .nxt-btn{
+.question_box_footer .nxt_btn{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -266,31 +267,35 @@ body {
     padding: 0 5px;
 }
 
-.result_box .buttons{
+.result_box .buttons {
     display: flex;
-    justify-content: space-evenly;
-    width: 100%;
-    height: 50px;
-    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 35px;
+
 }
 
 .result_box .buttons button{
-    width: 90px;
+    margin: 0 5px;
     height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    background-color: rgb(255, 222, 161);
-    border: none;
-    font-family: 'Oswald', sans-serif;
-    color: rgb(28, 28, 137);
-    border-radius: 2px;
+    width: 200px;
 }
 
-.result_box .buttons button:hover{
-    background-color: rgb(222, 183, 111);
-    color: white;
+.result_box .buttons .finish_btn{
+    color: rgb(255, 211, 129);
+    background-color: white;
+    border-color: rgb(255, 211, 129);
+    border-width: .1em;
+    border-radius: 2px;
+    cursor: pointer;
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px;
+}
+
+.result_box .buttons .finish_btn:hover{
     transition: .5s;
+    background-color: rgb(255, 211, 129);
+    color: white;
 }
 
 
