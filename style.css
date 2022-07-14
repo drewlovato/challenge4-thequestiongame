@@ -150,12 +150,15 @@ body {
 .rules_box .buttons .exit_btn:hover{
     transition: .5s;
     background-color: rgb(255, 211, 129);
-    color: white;
+    color: rgb(28, 28, 137);
 }
 
 .rules_box .buttons .begin:hover{
     transition: .5s;
-    background-color: rgb(255, 222, 161);
+    color: rgb(255, 222, 161);
+    background-color: white;
+    border-color: rgb(255, 222, 161);
+    border-width: .2em;
 }
 
 /* Start of Questions Box */
@@ -196,9 +199,10 @@ body {
     font-size: 15px;
 }
 
-.question_box button:hover{
-    background-color: rgb(222, 183, 111);
-    transition: .4s;
+.question_box .option-list .option button:hover{
+    background-color: rgb(255, 222, 161);
+    color: rgb(28, 28, 137);
+    transition: .5s;
 }
 
 /* Start of Question Box Footer */
