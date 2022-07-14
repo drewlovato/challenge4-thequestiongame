@@ -23,13 +23,11 @@ function setTime() {
     if (secondsLeft === 0) {
       // Stops execution of action at set interval
       clearInterval(timerInterval);
-      // Calls function to create and append image
-      sendMessage();
+      //   // Calls function to create and append image
+      //   sendMessage();
     }
   }, 1000);
 }
-
-setTime();
 
 //**FUNCTIONS SHOW BOXES**
 //if start button clicked (visible state)=>
@@ -47,6 +45,23 @@ begin_btn.onclick = () => {
   rules_box.classList.remove("activeInfo"); //HIDES RULES BOX
   question_box.classList.remove("activeQuiz"); //REVEALS QUESTION BOX
   showQuestions(0);
+
+  function setTime() {
+    // Sets interval in variable
+    var timerInterval = setInterval(function () {
+      secondsLeft--;
+      timeEl.textContent = "Time Remaining: " + secondsLeft;
+
+      if (secondsLeft === 0) {
+        // Stops execution of action at set interval
+        clearInterval(timerInterval);
+        //   // Calls function to create and append image
+        //   sendMessage();
+      }
+    }, 1000);
+  }
+
+  setTime();
 };
 
 let question_count = 0;
