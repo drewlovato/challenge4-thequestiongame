@@ -73,7 +73,12 @@ nxt_btn.onclick = () => {
   question_box.classList.remove("activeInfo"); //REMOVES RULES BOX
   result_box.classList.add("activeResult"); //REVEALS QUESTION BOX
 
-  showQuestions(1);
+  let counter = 1;
+  showQuestions(counter);
+  counter++;
+  if (counter > 5) {
+    counter = 0;
+  }
 };
 
 finish_btn.onclick = () => {
