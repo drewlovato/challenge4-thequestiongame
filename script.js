@@ -48,11 +48,32 @@ exit_btn.onclick = () => {
 begin_btn.onclick = () => {
   rules_box.classList.remove("activeInfo"); //REMOVES RULES BOX
   question_box.classList.add("activeInfo"); //REVEALS QUESTION BOX
+
+  showQuestions(0);
+
+  function setTime() {
+    // Sets interval in variable
+    var timerInterval = setInterval(function () {
+      secondsLeft--;
+      timeEl.textContent = "Time Remaining: " + secondsLeft;
+
+      if (secondsLeft === 0) {
+        // Stops execution of action at set interval
+        clearInterval(timerInterval);
+        //   // Calls function to create and append image
+        //   sendMessage();
+      }
+    }, 1000);
+
+    setTime();
+  }
 };
 
 nxt_btn.onclick = () => {
   question_box.classList.remove("activeInfo"); //REMOVES RULES BOX
   result_box.classList.add("activeResult"); //REVEALS QUESTION BOX
+
+  showQuestions(1);
 };
 
 finish_btn.onclick = () => {
@@ -61,7 +82,7 @@ finish_btn.onclick = () => {
 
 // SAVE FOR LATER
 
-// //if begin button clicked (hidden & then visible state)
+// // //if begin button clicked (hidden & then visible state)
 // begin_btn.onclick = () => {
 //   rules_box.classList.remove("activeInfo"); //HIDES RULES BOX
 //   question_box.classList.remove("activeQuiz"); //REVEALS QUESTION BOX
@@ -88,46 +109,46 @@ finish_btn.onclick = () => {
 // let question_count = 0;
 
 // //**FUNCTION SHOW QUESTIONS**
-// function showQuestions() {
-//   const question_box = document.querySelector(".question_box");
-//   let que_tag = "<span>" + questions[0].question + "<span>";
-//   question_box.innerHTML = que_tag;
-// }
+function showQuestions(index) {
+  const question_box = document.querySelector(".question_box");
+  let que_tag = "<span>" + questions[`${index}`].question + "<span>";
+  question_box.innerHTML = que_tag;
+}
 
 // //QUESTIONS
-// let questions = [
-//   {
-//     numb: 1,
-//     question: "What does URL stand for?",
-//     answer: "Uniform Resource Locator",
-//     options: [
-//       "Underate Relative Language",
-//       "Uniform Resource Locator",
-//       "Underwater Relocation Landing",
-//       "Universal Raptor Launcher 🦖",
-//     ],
-//   },
-//   {
-//     numb: 2,
-//     question: "What are the first 5 numbers of the fibonnaci sequence?",
-//     answer: "0,1,1,2,3",
-//     options: ["2,3,4,5,6", "0,1,1,2,3,5", "5,6,9,10,12", "0,1,1,2,3"],
-//   },
-//   {
-//     numb: 3,
-//     question: "What was Pablo Picasso's original last name?",
-//     answer: "Ruiz",
-//     options: ["Barbarra", "Ruiz", "Pingatelli", "Picasso"],
-//   },
-//   {
-//     numb: 4,
-//     question: "How much money does Amazon make in one day?",
-//     answer: "Aproximately $638 Million per day",
-//     options: [
-//       "Aproximately $10 Million per day",
-//       "Aproximately $68 Million per day",
-//       "Aproximately $320 Million per day",
-//       "Aproximately $638 Million per day",
-//     ],
-//   },
-// ];
+let questions = [
+  {
+    numb: 1,
+    question: "What does URL stand for?",
+    answer: "Uniform Resource Locator",
+    options: [
+      "Underate Relative Language",
+      "Uniform Resource Locator",
+      "Underwater Relocation Landing",
+      "Universal Raptor Launcher 🦖",
+    ],
+  },
+  {
+    numb: 2,
+    question: "What are the first 5 numbers of the fibonnaci sequence?",
+    answer: "0,1,1,2,3",
+    options: ["2,3,4,5,6", "0,1,1,2,3,5", "5,6,9,10,12", "0,1,1,2,3"],
+  },
+  {
+    numb: 3,
+    question: "What was Pablo Picasso's original last name?",
+    answer: "Ruiz",
+    options: ["Barbarra", "Ruiz", "Pingatelli", "Picasso"],
+  },
+  {
+    numb: 4,
+    question: "How much money does Amazon make in one day?",
+    answer: "Aproximately $638 Million per day",
+    options: [
+      "Aproximately $10 Million per day",
+      "Aproximately $68 Million per day",
+      "Aproximately $320 Million per day",
+      "Aproximately $638 Million per day",
+    ],
+  },
+];
